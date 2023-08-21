@@ -31,7 +31,7 @@ function CartIcon() {
 
 export default function CartButton() {
   return (
-    <button type="submit">
+    <button type="button">
       <CartIcon />
     </button>
   );
