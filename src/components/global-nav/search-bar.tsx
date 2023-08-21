@@ -31,10 +31,10 @@ function SearchIcon() {
 
 export default function SearchBar() {
   return (
-    <form className="flex h-[46px] w-[214px] justify-between overflow-hidden rounded-[20px] border border-[#979797] pl-5 pr-2.5">
+    <form className="flex h-[46px] w-[214px] justify-between overflow-hidden rounded-[20px] border border-border-gray pl-5 pr-2.5">
       <input
         type="text"
-        className="w-[calc(100%-44px)] py-2.5 text-xl text-[#8B572A] outline-none"
+        className="w-[calc(100%-44px)] py-2.5 text-xl text-highlight-gold outline-none"
       />
       <button type="submit">
         <SearchIcon />

@@ -22,13 +22,13 @@ export default function CategoriesNav() {
   return (
     <li
       role="list"
-      className="col mb-[5px] flex h-5 divide-x-[1px] divide-[#3F3A3A]"
+      className="col divide-text-gray mb-[5px] flex h-5 divide-x-[1px]"
     >
       {NAV_LINK_LIST.map((category, index) => (
         <ul
           key={category.title}
           className={`w-[150px] text-center indent-[30px] text-xl leading-5 tracking-[30px] ${
-            selectedIndex === index ? "text-[#8B572A]" : "text-[#3F3A3A]"
+            selectedIndex === index ? "text-highlight-gold" : "text-text-gray"
           }`}
         >
           <Link href={category.link}>{category.title}</Link>

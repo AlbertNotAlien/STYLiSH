@@ -31,7 +31,7 @@ function ProfileIcon() {
 
 export default function ProfileButton() {
   return (
-    <button type="submit">
+    <button type="button">
       <ProfileIcon />
     </button>
   );
