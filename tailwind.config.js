@@ -13,6 +13,8 @@ module.exports = {
         "highlight-gold": "#8B572A",
         "background-gray": "#313538",
         "border-gray": "#979797",
+        // TODO: different gray
+        "gray-bright": "#D3D3D3",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -20,6 +22,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       maxWidth: {
+        "page-container": "1160px",
+      },
+      width: {
         "page-container": "1160px",
       },
     },
