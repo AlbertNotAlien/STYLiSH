@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ColorBlockList from "../../../components/color-block-list";
+import ColorBlockList from "@/components/color-block-list";
 
 export default function Product() {
   return (
