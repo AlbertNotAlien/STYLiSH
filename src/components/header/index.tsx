@@ -9,9 +9,9 @@ import ProfileButton from "./profile-button";
 // TODO: font Noto Sans TC
 
 // TODO: fixed or sticky
-export default function GlobalNav() {
+export default function Header() {
   return (
-    <nav className="sticky flex h-[140px] w-full items-center justify-between border-b-[40px] border-background-gray px-[60px] py-[26px]">
+    <nav className="flex h-[140px] w-full items-center justify-between border-b-[40px] border-background-gray bg-white px-[60px] py-[26px]">
       <div className="flex items-end gap-[57px]">
         <Logo />
         <CategoriesNav />
