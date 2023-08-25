@@ -20,20 +20,20 @@ const NAV_LINK_LIST = [
 export default function CategoriesNav() {
   const selectedIndex = 0;
   return (
-    <li
+    <ul
       role="list"
       className="col mb-[5px] flex h-5 divide-x-[1px] divide-text-gray"
     >
       {NAV_LINK_LIST.map((category, index) => (
-        <ul
+        <li
           key={category.title}
           className={`w-[150px] text-center indent-[30px] text-xl leading-5 tracking-[30px] ${
             selectedIndex === index ? "text-highlight-gold" : "text-text-gray"
           }`}
         >
           <Link href={category.url}>{category.title}</Link>
-        </ul>
+        </li>
       ))}
-    </li>
+    </ul>
   );
 }

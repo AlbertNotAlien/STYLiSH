@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import searchHoverIcon from "@/public/images/icon/search-hover.png";
+import searchIcon from "@/public/images/icon/search.png";
 
 function SearchIcon() {
   const [isHover, setIsHover] = useState(false);
@@ -16,9 +18,7 @@ function SearchIcon() {
 
   return (
     <Image
-      src={`${
-        isHover ? "/images/icon/search-hover.png" : "/images/icon/search.png"
-      }`}
+      src={isHover ? searchHoverIcon : searchIcon}
       alt="search"
       width={44}
       height={44}

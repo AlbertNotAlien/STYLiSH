@@ -1,15 +1,15 @@
 import React from "react";
 
-interface ColorBlockType {
+type ColorBlockProps = {
   color: string;
-}
+};
 
-// how to use variable in tailwind?
-export default function ColorBlock({ color }: ColorBlockType) {
+export default function ColorBlock({ color }: ColorBlockProps) {
   return (
-    <ul
+    <li
+      key={color}
       className="h-6 w-6 border border-gray-bright"
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: `#${color}` }}
     />
   );
 }

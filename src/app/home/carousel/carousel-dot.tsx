@@ -1,16 +1,16 @@
 import React from "react";
 
-interface CarouselDotType {
+type CarouselDotProps = {
   index: number;
   activeDotIndex: number;
   handleSelectDot: Function;
-}
+};
 
 export default function CarouselDot({
   index,
   activeDotIndex,
   handleSelectDot,
-}: CarouselDotType) {
+}: CarouselDotProps) {
   const isActive = activeDotIndex === index;
   return (
     <button
