@@ -48,7 +48,7 @@ const SOCIAL_MEDIA_ICONS = [
 
 export default function Footer() {
   return (
-    <div className="flex h-[115px] w-full justify-center bg-background-gray">
+    <footer className="flex h-[115px] w-full justify-center bg-background-gray">
       <div className="flex w-page-container max-w-page-container items-center justify-between gap-x-[30px]">
         <div className="flex grow items-center justify-between">
           <nav>
@@ -89,6 +89,6 @@ export default function Footer() {
           © 2023. All rights reserved.
         </p>
       </div>
-    </div>
+    </footer>
   );
 }

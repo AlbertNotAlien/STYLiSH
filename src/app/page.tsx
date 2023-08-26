@@ -8,16 +8,12 @@ import Products from "./home/products";
 export default function Home() {
   return (
     <>
-      <header className="fixed top-0 z-50 w-full">
-        <Header />
-      </header>
+      <Header />
       <main className="mb-[96px] mt-[140px]">
         <Carousel />
         <Products />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }
