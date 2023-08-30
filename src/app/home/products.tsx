@@ -1,7 +1,9 @@
 import React from "react";
-import Product from "./product";
+import Image from "next/image";
 import { fetchAllProducts } from "@/utils/api";
-import { Color } from "@/components/color-block-list";
+import ColorBlockList, { Color } from "@/components/color-block-list";
+
+// TODO: tailwind container
 
 type Variant = {
   color_code: string;
@@ -39,12 +41,23 @@ export default async function Products() {
       <div className="flex w-page-container max-w-page-container flex-wrap justify-start gap-x-10 gap-y-[50px]">
         {products.data.map((product) => (
           <React.Fragment key={product.id}>
-            <Product
-              src={product.main_image}
-              colors={product.colors}
-              title={product.title}
-              price={product.price}
-            />
+            <div className="flex flex-col gap-y-5">
+              <Image
+                src={product.main_image}
+                alt="product-image"
+                width={360}
+                height={480}
+              />
+              <ColorBlockList colors={product.colors} />
+              <div className="group/products-text">
+                <p className="text-xl font-normal tracking-[4px] text-text-gray group-hover/products-text:underline group-hover/products-text:decoration-1">
+                  {product.title}
+                </p>
+                <p className="text-xl font-normal tracking-[4px] text-text-gray group-hover/products-text:underline group-hover/products-text:decoration-1">
+                  {product.price}
+                </p>
+              </div>
+            </div>
           </React.Fragment>
         ))}
       </div>
