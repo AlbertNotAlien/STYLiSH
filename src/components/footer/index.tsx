@@ -48,18 +48,18 @@ const SOCIAL_MEDIA_ICONS = [
 
 export default function Footer() {
   return (
-    <footer className="flex h-[115px] w-full justify-center bg-background-gray">
-      <div className="flex w-page-container max-w-page-container items-center justify-between gap-x-[30px]">
-        <div className="flex grow items-center justify-between">
+    <section className="bg-stylish-gray-darkest flex h-[146px] w-full justify-center xl:h-[115px]">
+      <div className="xl:w-desktop-container xl:max-w-desktop-container mt-[23px] flex flex-col items-center justify-start gap-y-[13px] xl:mt-0 xl:flex-row xl:justify-between xl:gap-x-[30px] xl:px-[60px]">
+        <div className="flex w-[360px] items-center justify-between px-8 xl:grow xl:px-0">
           <nav>
-            <ul className="divide-text-dark-gray flex divide-x">
+            <ul className="xl:divide-stylish-gray-medium flex h-[76px] w-full flex-col flex-wrap items-start gap-x-9 gap-y-2 xl:h-[22px] xl:w-auto xl:flex-row xl:flex-nowrap xl:items-center xl:gap-x-0 xl:gap-y-0 xl:divide-x">
               {FOOTER_NAV_LINKS.map((link) => (
                 <li
                   key={link.title}
-                  className="flex h-4 w-[134px] justify-center text-center"
+                  className="flex h-5 w-auto justify-center text-center xl:h-4 xl:w-[134px]"
                 >
                   <Link
-                    className="text-text-white text-base leading-4"
+                    className="text-stylish-white text-[14px] xl:text-base xl:leading-4"
                     href={link.url}
                   >
                     {link.title}
@@ -68,7 +68,7 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-          <ul className="flex gap-x-[30px]">
+          <ul className="flex gap-3.5 xl:gap-x-[30px]">
             {SOCIAL_MEDIA_ICONS.map((socialMedia) => (
               <li key={socialMedia.alternative}>
                 <Link href={socialMedia.url}>
@@ -78,17 +78,17 @@ export default function Footer() {
                     width={50}
                     height={50}
                     priority
-                    className="min-w-[50px]"
+                    className="w-5 xl:w-[50px]"
                   />
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <p className="text-text-dark-gray grow text-xs">
+        <p className="text-stylish-gray-medium text-[10px] xl:text-xs">
           © 2023. All rights reserved.
         </p>
       </div>
-    </footer>
+    </section>
   );
 }
