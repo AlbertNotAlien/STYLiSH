@@ -1,48 +1,48 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import lineIcon from "@/public/images/icon/social-media/line.png";
-import twitterIcon from "@/public/images/icon/social-media/twitter.png";
-import facebookIcon from "@/public/images/icon/social-media/facebook.png";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import lineIcon from '@/public/images/icon/social-media/line.png';
+import twitterIcon from '@/public/images/icon/social-media/twitter.png';
+import facebookIcon from '@/public/images/icon/social-media/facebook.png';
 
 const FOOTER_NAV_LINKS = [
   {
-    title: "關於 STYLiSH",
-    url: "/",
+    title: '關於 STYLiSH',
+    url: '/',
   },
   {
-    title: "服務條款",
-    url: "/",
+    title: '服務條款',
+    url: '/',
   },
   {
-    title: "隱私政策",
-    url: "/",
+    title: '隱私政策',
+    url: '/',
   },
   {
-    title: "聯絡我們",
-    url: "/",
+    title: '聯絡我們',
+    url: '/',
   },
   {
-    title: "FAQ",
-    url: "/",
+    title: 'FAQ',
+    url: '/',
   },
 ];
 
 const SOCIAL_MEDIA_ICONS = [
   {
-    alternative: "line-icon",
+    alternative: 'line-icon',
     src: lineIcon,
-    url: "/",
+    url: '/',
   },
   {
-    alternative: "twitter-icon",
+    alternative: 'twitter-icon',
     src: twitterIcon,
-    url: "/",
+    url: '/',
   },
   {
-    alternative: "facebook-icon",
+    alternative: 'facebook-icon',
     src: facebookIcon,
-    url: "/",
+    url: '/',
   },
 ];
 

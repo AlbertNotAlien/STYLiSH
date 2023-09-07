@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import cartIcon from "@/public/images/icon/cart.png";
-import cartMobileIcon from "@/public/images/icon/cart-mobile.png";
-import cartHoverIcon from "@/public/images/icon/cart-hover.png";
+import React from 'react';
+import Image from 'next/image';
+import cartIcon from '@/public/images/icon/cart.png';
+import cartMobileIcon from '@/public/images/icon/cart-mobile.png';
+import cartHoverIcon from '@/public/images/icon/cart-hover.png';
 
 export default function CartButton() {
   return (

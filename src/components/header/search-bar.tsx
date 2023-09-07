@@ -13,7 +13,7 @@ export default function SearchBar() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isMobileOpened, setIsMobileOpened] = useState(false);
   const [isDesktopBreakpoints, setIsDesktopBreakpoints] = useState(
-    () => window.innerWidth > DESKTOP_BREAKPOINTS,
+    () => (typeof window !== 'undefined' ? window.innerWidth > DESKTOP_BREAKPOINTS : false),
   );
 
   const clearInputValue = () => {
@@ -33,10 +33,10 @@ export default function SearchBar() {
 
   const searchProducts = () => {
     if (inputRef.current && inputRef.current.value.length > 0) {
-      console.log(
-        '🚀 ~ file: search-bar.tsx:38 ~ searchProducts ~ inputRef.current.value:',
-        inputRef.current.value,
-      );
+      // console.log(
+      //   '🚀 ~ file: search-bar.tsx:38 ~ searchProducts ~ inputRef.current.value:',
+      //   inputRef.current.value,
+      // );
     }
   };
 

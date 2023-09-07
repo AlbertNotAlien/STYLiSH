@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useState } from 'react';
+import Image from 'next/image';
 
-const CAROUSEL_LIST = ["1", "2", "3"];
+const CAROUSEL_LIST = ['1', '2', '3'];
 
 export default function Carousel() {
   const [activeDotIndex, setActiveDotIndex] = useState(0);
@@ -19,7 +19,7 @@ export default function Carousel() {
         alt="carousel"
         width={1920}
         height={500}
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: 'cover' }}
         priority
       />
       <div className="absolute flex h-full w-full items-center xl:w-[1280px] xl:max-w-[1280px]">
@@ -44,7 +44,7 @@ export default function Carousel() {
                   type="button"
                   aria-label="carousel"
                   className={`h-1 w-1 rounded-full xl:h-2.5 xl:w-2.5 ${
-                    isActive ? "bg-stylish-gold" : "bg-white/40"
+                    isActive ? 'bg-stylish-gold' : 'bg-white/40'
                   }`}
                   onClick={() => handleSelectDot(index)}
                 />
