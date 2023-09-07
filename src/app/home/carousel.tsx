@@ -12,13 +12,11 @@ export default function Carousel() {
   };
 
   return (
-    // TODO: remove bg-yellow-500
-    <section className="relative z-10 flex h-[185px] justify-center bg-yellow-500 xl:h-[500px]">
+    <section className="relative z-10 flex h-[185px] justify-center xl:h-[500px]">
       <Image
         src="/images/carousel/carousel-1.png"
         alt="carousel"
-        width={1920}
-        height={500}
+        fill
         style={{ objectFit: 'cover' }}
         priority
       />
