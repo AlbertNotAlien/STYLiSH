@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CategoriesNav from './categories-nav';
 import SearchBar from './search-bar';
-import CartButton from '../cart-button';
-import ProfileButton from '../profile-button';
+import CartButton from './cart-button';
+import ProfileButton from './profile-button';
 
 // TODO: global padding
 // TODO: font Noto Sans TC
