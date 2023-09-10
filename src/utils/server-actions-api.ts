@@ -3,8 +3,8 @@
 // import { API_HOST_NAME, API_VERSION } from '@/constants/config';
 import { fetchAllProducts } from './server-side-api';
 
-export async function fetchAllProductsByServerAction(paging = 0) {
-  const result = await fetchAllProducts(paging);
+export async function fetchAllProductsByServerAction({ category = 'all', paging = 0 }: { category?: string, paging?: number }) {
+  const result = await fetchAllProducts({ category, paging });
   return result;
 }
 
