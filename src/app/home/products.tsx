@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { useInView } from 'react-intersection-observer';
-import { fetchAllProductsByServerAction } from '@/utils/server-actions-api';
+import { getProductsByServerAction } from '@/utils/server-actions-api';
 import { ProductsType } from '@/types/products';
 
 // TODO: tailwind container in Products
@@ -37,7 +37,7 @@ export default function Products({ initialProducts }: ProductsProps) {
   )?.category || 'all';
 
   async function getNextPagingProducts(paging: number) {
-    const newProducts = (await fetchAllProductsByServerAction({
+    const newProducts = (await getProductsByServerAction({
       category: categoryParams,
       paging,
     })) as ProductsType;
