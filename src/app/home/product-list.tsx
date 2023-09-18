@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { useInView } from 'react-intersection-observer';
 import { getProductsByServerAction } from '@/utils/server-actions-api';
-import { ProductsType } from '@/types/products';
+import { Products } from '@/types/products';
 
 // TODO: tailwind container in Products
 // TODO: margin-top by props merging className in Products
@@ -25,12 +25,12 @@ const CATEGORY_LIST = [
   },
 ];
 
-type ProductsProps = {
-  initialProducts: ProductsType;
+type ProductsListProps = {
+  initialProducts: Products;
 };
 
-export default function Products({ initialProducts }: ProductsProps) {
-  const [products, setProducts] = useState<ProductsType>(initialProducts);
+export default function ProductList({ initialProducts }: ProductsListProps) {
+  const [products, setProducts] = useState<Products>(initialProducts);
   const searchParams = useSearchParams();
   const categoryParams =
     CATEGORY_LIST.find(
@@ -41,8 +41,8 @@ export default function Products({ initialProducts }: ProductsProps) {
     const newProducts = (await getProductsByServerAction({
       category: categoryParams,
       paging,
-    })) as ProductsType;
-    setProducts((prev: ProductsType) => ({
+    })) as Products;
+    setProducts((prev: Products) => ({
       data: [...prev.data, ...newProducts.data],
       next_paging: newProducts.next_paging,
     }));

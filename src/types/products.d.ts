@@ -27,7 +27,7 @@ export type Product = {
   images: string[];
 };
 
-export type ProductsType = {
+export type Products = {
   data: Product[];
   next_paging: number | undefined;
 };
