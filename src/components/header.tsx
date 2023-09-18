@@ -34,7 +34,7 @@ export default function Header() {
             <CategoriesNav />
           </nav>
         </div>
-        <div className="absolute flex w-full justify-end gap-x-[42px] px-2.5 py-1.5 xl:relative">
+        <div className="pointer-events-none absolute flex w-full justify-end gap-x-[42px] px-2.5 py-1.5 xl:relative">
           <SearchBar />
           <div className="hidden xl:flex xl:gap-x-[42px]">
             <CartButton />
