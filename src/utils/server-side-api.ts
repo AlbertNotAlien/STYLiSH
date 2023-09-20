@@ -33,3 +33,16 @@ export const searchProducts = async (keyword = '', paging = 0) => {
 
   return res.json();
 };
+
+export const getCampaigns = async () => {
+  const res = await fetch(
+    `https://${API_HOST_NAME}/api/${API_VERSION}/marketing/campaigns`,
+  );
+
+  if (!res.ok) {
+    // TODO: This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+};
