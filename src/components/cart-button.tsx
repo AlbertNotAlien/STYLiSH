@@ -38,7 +38,7 @@ export default function CartButton() {
           />
         </div>
       </div>
-      <p className="text-stylish-white group-hover/cart-icon:text-stylish-gold text-base xl:hidden">
+      <p className="group-hover/cart-icon:text-stylish-gold-default text-base text-stylish-white xl:hidden">
         購物車
       </p>
     </button>
