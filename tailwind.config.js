@@ -1,31 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        "text-gray": "#3F3A3A",
-        "text-black": "#070707",
-        "highlight-gold": "#8B572A",
-        "background-gray": "#313538",
-        "border-gray": "#979797",
-        // TODO: different gray
-        "gray-bright": "#D3D3D3",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        stylish: {
+          white: '#F5F5F5',
+          gray: {
+            lightest: '#D3D3D3',
+            lighter: '#979797',
+            medium: '#828282',
+            darker: '#3F3A3A',
+            darkest: '#313538',
+          },
+          black: '#070707',
+          gold: {
+            default: '#8B572A',
+            lighter: '#A66832',
+          },
+        },
       },
       maxWidth: {
-        "page-container": "1160px",
+        'desktop-container': '1280px',
       },
       width: {
-        "page-container": "1160px",
+        'desktop-container': '1280px',
       },
     },
   },
