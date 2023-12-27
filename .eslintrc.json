@@ -1,5 +1,10 @@
 {
-  "extends": ["airbnb", "airbnb-typescript", "plugin:react-hooks/recommended"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
   "plugins": ["react-hooks"],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
