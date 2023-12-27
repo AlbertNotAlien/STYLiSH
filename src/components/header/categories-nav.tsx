@@ -22,7 +22,7 @@ export default function CategoriesNav() {
   return (
     <li
       role="list"
-      className="col divide-text-gray mb-[5px] flex h-5 divide-x-[1px]"
+      className="col mb-[5px] flex h-5 divide-x-[1px] divide-text-gray"
     >
       {NAV_LINK_LIST.map((category, index) => (
         <ul
