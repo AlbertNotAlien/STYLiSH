@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { fetchAllProducts } from "@/utils/api";
-import ColorBlockList, { Color } from "@/components/color-block-list";
+import React from 'react';
+import Image from 'next/image';
+import { fetchAllProducts } from '@/utils/api';
+import ColorBlockList, { Color } from '@/components/color-block-list';
 
 // TODO: tailwind container
 
@@ -29,12 +29,12 @@ interface Product {
   images: string[];
 }
 
-interface Products {
+interface ProductsType {
   data: Product[];
 }
 
 export default async function Products() {
-  const products: Products = await fetchAllProducts();
+  const products: ProductsType = await fetchAllProducts();
 
   // TODO: margin-top by props merging className
   return (

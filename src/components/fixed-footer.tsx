@@ -1,6 +1,6 @@
-import React from "react";
-import CartButton from "./cart-button";
-import ProfileButton from "./profile-button";
+import React from 'react';
+import CartButton from './cart-button';
+import ProfileButton from './profile-button';
 
 export default function FixedFooter() {
   return (

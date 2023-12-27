@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import profileIcon from "@/public/images/icon/member.png";
-import profileMobileIcon from "@/public/images/icon/member-mobile.png";
-import profileHoverIcon from "@/public/images/icon/member-hover.png";
+import React from 'react';
+import Image from 'next/image';
+import profileIcon from '@/public/images/icon/member.png';
+import profileMobileIcon from '@/public/images/icon/member-mobile.png';
+import profileHoverIcon from '@/public/images/icon/member-hover.png';
 
 export default function ProfileButton() {
   return (
