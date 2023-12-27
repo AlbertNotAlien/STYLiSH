@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "../components/header";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import Carousel from "./home/carousel";
 import Products from "./home/products";
 
@@ -10,10 +11,13 @@ export default function Home() {
       <header className="fixed top-0 z-50 w-full">
         <Header />
       </header>
-      <main className="mt-[140px]">
+      <main className="mb-[96px] mt-[140px]">
         <Carousel />
         <Products />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

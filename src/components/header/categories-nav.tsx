@@ -4,15 +4,15 @@ import Link from "next/link";
 const NAV_LINK_LIST = [
   {
     title: "女裝",
-    link: "/",
+    url: "/",
   },
   {
     title: "男裝",
-    link: "/",
+    url: "/",
   },
   {
     title: "配件",
-    link: "/",
+    url: "/",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function CategoriesNav() {
             selectedIndex === index ? "text-highlight-gold" : "text-text-gray"
           }`}
         >
-          <Link href={category.link}>{category.title}</Link>
+          <Link href={category.url}>{category.title}</Link>
         </ul>
       ))}
     </li>
