@@ -1,10 +1,10 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import CategoriesNav from "./categories-nav";
-import SearchBar from "./search-bar";
-import CartButton from "../cart-button";
-import ProfileButton from "../profile-button";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import CategoriesNav from './categories-nav';
+import SearchBar from './search-bar';
+import CartButton from '../cart-button';
+import ProfileButton from '../profile-button';
 
 // TODO: global padding
 // TODO: font Noto Sans TC
@@ -13,8 +13,7 @@ import ProfileButton from "../profile-button";
 export default function Header() {
   return (
     <>
-      <div className="flex h-[52px] items-center justify-between bg-white px-4 py-1.5 xl:h-[100px] xl:px-[60px] xl:py-[26px]">
-        <div className="w-11 xl:hidden" />
+      <div className="flex h-[52px] w-full items-center justify-center bg-white px-4 py-1.5 xl:h-[100px] xl:justify-between xl:px-[60px] xl:py-[26px]">
         <div className="flex items-end gap-[57px]">
           <Link
             href="/"
@@ -26,7 +25,7 @@ export default function Header() {
               priority
               fill
               style={{
-                objectFit: "cover",
+                objectFit: 'cover',
               }}
               className="h-[24px] xl:h-[48px] "
             />
@@ -35,7 +34,7 @@ export default function Header() {
             <CategoriesNav />
           </nav>
         </div>
-        <div className="flex gap-x-[42px]">
+        <div className="absolute flex w-full justify-end gap-x-[42px] px-2.5 py-1.5 xl:relative">
           <SearchBar />
           <div className="hidden xl:flex xl:gap-x-[42px]">
             <CartButton />
@@ -43,7 +42,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <section className="bg-stylish-gray-darkest h-[50px] xl:h-[40px]">
+      <section className="h-[50px] bg-stylish-gray-darkest xl:h-[40px]">
         <nav className="block h-full xl:hidden">
           <CategoriesNav />
         </nav>
