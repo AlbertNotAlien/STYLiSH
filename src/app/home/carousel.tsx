@@ -87,7 +87,9 @@ export default function Carousel({ campaigns }: CarouselProps) {
               type="button"
               aria-label="carousel"
               className={`h-1 w-1 rounded-full xl:h-2.5 xl:w-2.5 ${
-                index === currentIndex ? 'bg-stylish-gold' : 'bg-white/40'
+                index === currentIndex
+                  ? 'bg-stylish-gold-default'
+                  : 'bg-white/40'
               }`}
               onClick={() => turnToSlide(index)}
             />

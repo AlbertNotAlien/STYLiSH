@@ -38,7 +38,7 @@ export default function ProfileButton() {
           />
         </div>
       </div>
-      <p className="text-stylish-white group-hover/profile-icon:text-stylish-gold text-base xl:hidden">
+      <p className="group-hover/profile-icon:text-stylish-gold-default text-base text-stylish-white xl:hidden">
         會員
       </p>
     </button>

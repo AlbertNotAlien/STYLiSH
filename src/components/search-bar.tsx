@@ -77,7 +77,7 @@ export default function SearchBar() {
       <input
         type="text"
         ref={inputRef}
-        className={`pointer-events-auto h-full w-full rounded-[20px] border border-stylish-gray-lighter bg-white py-2.5 pl-5 pr-[54px] text-xl text-stylish-gold outline-none focus:border-stylish-gold xl:block xl:border-solid ${
+        className={`text-stylish-gold focus:border-stylish-gold pointer-events-auto h-full w-full rounded-[20px] border border-stylish-gray-lighter bg-white py-2.5 pl-5 pr-[54px] text-xl outline-none xl:block xl:border-solid ${
           isOpenedInMobileSize ? 'block border-solid' : 'hidden border-none'
         }`}
       />

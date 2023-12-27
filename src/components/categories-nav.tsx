@@ -37,10 +37,10 @@ export default function CategoriesNav() {
         <Link
           key={item.title}
           href={`${pathname}?category=${item.category}`}
-          className={`w-full text-center text-base hover:brightness-125 xl:w-[150px] xl:indent-[30px] xl:text-xl xl:leading-5 xl:tracking-[30px] ${
+          className={`w-full text-center text-base xl:w-[150px] xl:indent-[30px] xl:text-xl xl:leading-5 xl:tracking-[30px] ${
             categoryParams === item.category
-              ? 'text-stylish-white xl:text-stylish-gold'
-              : 'text-stylish-gray-medium xl:text-stylish-gray-darker'
+              ? 'xl:text-stylish-gold-default text-stylish-white'
+              : 'xl:hover:text-stylish-gold-lighter text-stylish-gray-medium hover:text-stylish-gray-lightest xl:text-stylish-gray-darker'
           }`}
         >
           {item.title}
