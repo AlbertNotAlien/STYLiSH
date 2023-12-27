@@ -11,16 +11,18 @@ import ProfileButton from "./profile-button";
 // TODO: fixed or sticky
 export default function Header() {
   return (
-    <nav className="flex h-[140px] w-full items-center justify-between border-b-[40px] border-background-gray bg-white px-[60px] py-[26px]">
-      <div className="flex items-end gap-[57px]">
-        <Logo />
-        <CategoriesNav />
-      </div>
-      <div className="flex gap-x-[42px]">
-        <SearchBar />
-        <CartButton />
-        <ProfileButton />
-      </div>
-    </nav>
+    <header className="fixed top-0 z-50 w-full">
+      <nav className="flex h-[140px] w-full items-center justify-between border-b-[40px] border-background-gray bg-white px-[60px] py-[26px]">
+        <div className="flex items-end gap-[57px]">
+          <Logo />
+          <CategoriesNav />
+        </div>
+        <div className="flex gap-x-[42px]">
+          <SearchBar />
+          <CartButton />
+          <ProfileButton />
+        </div>
+      </nav>
+    </header>
   );
 }
