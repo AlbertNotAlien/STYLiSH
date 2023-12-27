@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import CarouselDot from "./carousel-dot";
 
-interface CarouselDotsType {
-  carouselList: null[];
-}
+type CarouselDotsProps = {
+  carouselList: string[];
+};
 
-export default function CarouselDots({ carouselList }: CarouselDotsType) {
+export default function CarouselDots({ carouselList }: CarouselDotsProps) {
   const [activeDotIndex, setActiveDotIndex] = useState(0);
   const handleSelectDot = (index: number) => {
     setActiveDotIndex(index);

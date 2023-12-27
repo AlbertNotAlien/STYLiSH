@@ -1,20 +1,23 @@
 import React from "react";
 import ColorBlock from "./color-block";
 
-const COLOR_BLOCK_LIST = [
-  { color: "#FFF" },
-  { color: "#DFB" },
-  { color: "#CCC" },
-];
+export type Color = {
+  name: string;
+  code: string;
+};
 
-export default function ColorBlockList() {
+type ColorBlockListProps = {
+  colors: Color[];
+};
+
+export default function ColorBlockList({ colors }: ColorBlockListProps) {
   return (
-    <li className="flex gap-x-2.5">
-      {COLOR_BLOCK_LIST.map((block) => (
-        <React.Fragment key={block.color}>
-          <ColorBlock color={block.color} />
+    <ul className="flex gap-x-2.5">
+      {colors.map((color) => (
+        <React.Fragment key={color.name}>
+          <ColorBlock color={color.code} />
         </React.Fragment>
       ))}
-    </li>
+    </ul>
   );
 }

@@ -19,9 +19,9 @@ function CarouselStory() {
   );
 }
 
-export default function Carousel() {
-  const carouselList = new Array(3).fill(null);
+const CAROUSEL_LIST = ["1", "2", "3"];
 
+export default function Carousel() {
   return (
     // TODO: remove bg-yellow-500
     <div className="relative z-10 flex h-[500px] justify-center bg-yellow-500">
@@ -35,7 +35,7 @@ export default function Carousel() {
       />
       <div className="absolute flex h-full w-[1280px] max-w-[1280px] items-center">
         <CarouselStory />
-        <CarouselDots carouselList={carouselList} />
+        <CarouselDots carouselList={CAROUSEL_LIST} />
       </div>
     </div>
   );
