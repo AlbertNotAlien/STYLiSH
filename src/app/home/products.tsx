@@ -22,8 +22,8 @@ export default function Products({ initialProducts }: ProductsProps) {
     ));
   };
 
-  async function getNextPagingProducts(page: number) {
-    const newProducts = await fetchAllProductsByServerAction(page) as ProductsType;
+  async function getNextPagingProducts(paging: number) {
+    const newProducts = await fetchAllProductsByServerAction({ paging }) as ProductsType;
     addProducts(newProducts);
   }
 
