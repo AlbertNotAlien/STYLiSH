@@ -21,27 +21,8 @@ const CATEGORY_LIST = [
 
 // TODO: CategoriesNav links onClick padding
 export default function CategoriesNav() {
-  // const router = useRouter();
-  // const pathname = usePathname();
   const searchParams = useSearchParams();
   const categoryParams = CATEGORY_LIST.find((category) => searchParams.get('category') === category.category)?.category || 'all';
-  // const [category, setCategory] = useState(categoryParams);
-
-  // const createQueryString = useCallback(
-  //   // TODO: maybe move to utils
-  //   (name: string, value: string) => {
-  //     const params = new URLSearchParams(searchParams);
-  //     params.set(name, value);
-
-  //     return params.toString();
-  //   },
-  //   [searchParams],
-  // );
-
-  // const selectCategory = (newCategory: string) => {
-  //   setCategory(newCategory);
-  //   router.push(`${pathname}?${createQueryString('category', newCategory)}`);
-  // };
 
   return (
     <nav

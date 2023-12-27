@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { fetchAllProductsByServerAction } from '@/utils/server-actions-api';
@@ -16,16 +16,16 @@ type ProductsProps = {
 export default function Products({ initialProducts }: ProductsProps) {
   const [products, setProducts] = useState(initialProducts);
 
-  const addProducts = (newProducts: ProductsType) => {
+  async function getNextPagingProducts(paging: number) {
+    const newProducts = await fetchAllProductsByServerAction({ paging }) as ProductsType;
     setProducts((prev: ProductsType) => (
       { data: [...prev.data, ...newProducts.data], next_paging: newProducts.next_paging }
     ));
-  };
-
-  async function getNextPagingProducts(paging: number) {
-    const newProducts = await fetchAllProductsByServerAction({ paging }) as ProductsType;
-    addProducts(newProducts);
   }
+
+  useEffect(() => {
+    setProducts(initialProducts);
+  }, [initialProducts]);
 
   const { ref } = useInView({
     threshold: 0,
