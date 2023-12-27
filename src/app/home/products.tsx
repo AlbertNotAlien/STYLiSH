@@ -63,13 +63,13 @@ export default function Products({ initialProducts }: ProductsProps) {
     <section className="mx-6 mt-[15px] flex flex-wrap justify-start gap-x-1.5 gap-y-6 xl:mx-auto xl:mt-[70px] xl:w-desktop-container xl:max-w-desktop-container xl:gap-x-10 xl:gap-y-[50px] xl:px-[60px]">
       {products?.data.map((product) => (
         <React.Fragment key={`${product.id}_${categoryParams}`}>
-          <div className="flex w-[calc(50%-6px)] grow flex-col xl:w-auto">
+          <div className="flex w-[calc(50%-6px)] flex-col xl:w-auto xl:grow">
             <Image
               src={product.main_image}
               alt="product-image"
               width={360}
               height={480}
-              className="mb-3 w-full xl:mb-5"
+              className="mb-3 w-full xl:mb-5 xl:max-w-[360px]"
             />
             <div className="mb-2.5 xl:mb-5">
               <ul className="flex gap-x-1.5 xl:gap-x-2.5">
