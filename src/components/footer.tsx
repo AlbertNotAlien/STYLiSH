@@ -48,18 +48,18 @@ const SOCIAL_MEDIA_ICONS = [
 
 export default function Footer() {
   return (
-    <section className="bg-stylish-gray-darkest flex h-[146px] w-full justify-center xl:h-[115px]">
-      <div className="xl:w-desktop-container xl:max-w-desktop-container mt-[23px] flex flex-col items-center justify-start gap-y-[13px] xl:mt-0 xl:flex-row xl:justify-between xl:gap-x-[30px] xl:px-[60px]">
+    <section className="flex h-[146px] w-full justify-center bg-stylish-gray-darkest xl:h-[115px]">
+      <div className="mt-[23px] flex flex-col items-center justify-start gap-y-[13px] xl:mt-0 xl:w-desktop-container xl:max-w-desktop-container xl:flex-row xl:justify-between xl:gap-x-[30px] xl:px-[60px]">
         <div className="flex w-[360px] items-center justify-between px-8 xl:grow xl:px-0">
           <nav>
-            <ul className="xl:divide-stylish-gray-medium flex h-[76px] w-full flex-col flex-wrap items-start gap-x-9 gap-y-2 xl:h-[22px] xl:w-auto xl:flex-row xl:flex-nowrap xl:items-center xl:gap-x-0 xl:gap-y-0 xl:divide-x">
+            <ul className="flex h-[76px] w-full flex-col flex-wrap items-start gap-x-9 gap-y-2 xl:h-[22px] xl:w-auto xl:flex-row xl:flex-nowrap xl:items-center xl:gap-x-0 xl:gap-y-0 xl:divide-x xl:divide-stylish-gray-medium">
               {FOOTER_NAV_LINKS.map((link) => (
                 <li
                   key={link.title}
                   className="flex h-5 w-auto justify-center text-center xl:h-4 xl:w-[134px]"
                 >
                   <Link
-                    className="text-stylish-white text-[14px] xl:text-base xl:leading-4"
+                    className="text-[14px] text-stylish-white xl:text-base xl:leading-4"
                     href={link.url}
                   >
                     {link.title}
@@ -85,7 +85,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <p className="text-stylish-gray-medium text-[10px] xl:text-xs">
+        <p className="text-[10px] text-stylish-gray-medium xl:text-xs">
           © 2023. All rights reserved.
         </p>
       </div>

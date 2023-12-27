@@ -1,8 +1,6 @@
 'use client';
 
-import React, {
-  useState, useRef, useEffect, useCallback,
-} from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import searchIcon from '@/public/images/icon/search.png';
@@ -16,9 +14,11 @@ export default function SearchBar() {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [isMobileOpened, setIsMobileOpened] = useState(false);
-  const [isDesktopBreakpoints, setIsDesktopBreakpoints] = useState(() => (typeof window !== 'undefined'
-    ? window.innerWidth > DESKTOP_BREAKPOINTS
-    : false));
+  const [isDesktopBreakpoints, setIsDesktopBreakpoints] = useState(() =>
+    typeof window !== 'undefined'
+      ? window.innerWidth > DESKTOP_BREAKPOINTS
+      : false,
+  );
 
   const clearInputValue = () => {
     if (inputRef.current && inputRef.current.value !== '') {
@@ -39,9 +39,9 @@ export default function SearchBar() {
     event.preventDefault();
 
     if (
-      (isDesktopBreakpoints || isMobileOpened)
-      && inputRef.current
-      && inputRef.current.value.length > 0
+      (isDesktopBreakpoints || isMobileOpened) &&
+      inputRef.current &&
+      inputRef.current.value.length > 0
     ) {
       searchProductsByServerAction(inputRef.current.value);
       router.push(`${pathname}?keyword=${inputRef.current.value}`);
@@ -78,12 +78,12 @@ export default function SearchBar() {
       <input
         type="text"
         ref={inputRef}
-        className={`w-[calc(100%-44px)] bg-white py-2.5 pl-5 text-xl text-stylish-gold outline-none xl:block ${
+        className={`pointer-events-auto w-[calc(100%-44px)] bg-white py-2.5 pl-5 text-xl text-stylish-gold outline-none xl:block ${
           isMobileOpened ? 'block' : 'hidden'
         }`}
       />
       <button
-        className="group/search-icon h-10 w-10 focus:outline-none xl:h-11 xl:w-11"
+        className="group/search-icon pointer-events-auto h-10 w-10 focus:outline-none xl:h-11 xl:w-11"
         type="submit"
         onClick={handleSearch}
       >
