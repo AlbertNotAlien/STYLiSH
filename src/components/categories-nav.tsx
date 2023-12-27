@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 const CATEGORY_LIST = [
   {
@@ -21,6 +21,7 @@ const CATEGORY_LIST = [
 
 // TODO: CategoriesNav links onClick padding
 export default function CategoriesNav() {
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const categoryParams = CATEGORY_LIST.find((category) => searchParams.get('category') === category.category)?.category || 'all';
 
@@ -32,7 +33,7 @@ export default function CategoriesNav() {
       {CATEGORY_LIST.map((item) => (
         <Link
           key={item.title}
-          href={`?category=${item.category}`}
+          href={`${pathname}?category=${item.category}`}
           className={`w-full text-center text-base xl:w-[150px] xl:indent-[30px] xl:text-xl xl:leading-5 xl:tracking-[30px] ${
             categoryParams === item.category
               ? 'text-stylish-white xl:text-stylish-gold'

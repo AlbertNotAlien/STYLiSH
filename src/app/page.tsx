@@ -1,24 +1,45 @@
 import React from 'react';
-import { fetchAllProducts } from '@/utils/server-side-api';
+import { getProducts, searchProducts } from '@/utils/server-side-api';
 import Carousel from './home/carousel';
 import Products from './home/products';
 import { ProductsType } from '@/types/products';
 
-// export const dynamic = 'force-dynamic';
+type SearchParams =
+  | {
+    [key: string]: string | string[] | undefined;
+  }
+  | undefined;
+
+async function fetchProducts(searchParams: SearchParams) {
+  if (
+    searchParams
+    && searchParams.keyword
+    && typeof searchParams.keyword === 'string'
+  ) {
+    return searchProducts(searchParams.keyword);
+  }
+
+  if (
+    searchParams
+    && searchParams.category
+    && typeof searchParams.category === 'string'
+  ) {
+    return getProducts({
+      category: searchParams.category,
+    });
+  }
+
+  return getProducts({
+    category: 'all',
+  });
+}
 
 export default async function Home({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: SearchParams;
 }) {
-  const categoryParams = searchParams
-    && searchParams.category
-    && typeof searchParams.category === 'string'
-    ? searchParams.category
-    : 'all';
-  const products: ProductsType = await fetchAllProducts({
-    category: categoryParams,
-  });
+  const products: ProductsType = await fetchProducts(searchParams);
   return (
     <>
       <Carousel />

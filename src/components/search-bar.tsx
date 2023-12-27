@@ -4,17 +4,21 @@ import React, {
   useState, useRef, useEffect, useCallback,
 } from 'react';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 import searchIcon from '@/public/images/icon/search.png';
 import searchHoverIcon from '@/public/images/icon/search-hover.png';
+import { searchProductsByServerAction } from '@/utils/server-actions-api';
 
 const DESKTOP_BREAKPOINTS = 1280;
 
 export default function SearchBar() {
+  const pathname = usePathname();
+  const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [isMobileOpened, setIsMobileOpened] = useState(false);
-  const [isDesktopBreakpoints, setIsDesktopBreakpoints] = useState(
-    () => (typeof window !== 'undefined' ? window.innerWidth > DESKTOP_BREAKPOINTS : false),
-  );
+  const [isDesktopBreakpoints, setIsDesktopBreakpoints] = useState(() => (typeof window !== 'undefined'
+    ? window.innerWidth > DESKTOP_BREAKPOINTS
+    : false));
 
   const clearInputValue = () => {
     if (inputRef.current && inputRef.current.value !== '') {
@@ -31,20 +35,16 @@ export default function SearchBar() {
     setIsMobileOpened(!isMobileOpened);
   };
 
-  const searchProducts = () => {
-    if (inputRef.current && inputRef.current.value.length > 0) {
-      // console.log(
-      //   '🚀 ~ file: search-bar.tsx:38 ~ searchProducts ~ inputRef.current.value:',
-      //   inputRef.current.value,
-      // );
-    }
-  };
-
   const handleSearch = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    if (isDesktopBreakpoints || isMobileOpened) {
-      searchProducts();
+    if (
+      (isDesktopBreakpoints || isMobileOpened)
+      && inputRef.current
+      && inputRef.current.value.length > 0
+    ) {
+      searchProductsByServerAction(inputRef.current.value);
+      router.push(`${pathname}?keyword=${inputRef.current.value}`);
       closeSearchBar();
     } else {
       toggleSearchBar();
