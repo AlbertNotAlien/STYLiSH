@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { useInView } from 'react-intersection-observer';
 import { getProductsByServerAction } from '@/utils/server-actions-api';
 import { Products } from '@/types/products';
+import ProductsSkeleton from '@/components/products-skeleton';
 
 // TODO: tailwind container in Products
 // TODO: margin-top by props merging className in Products
@@ -52,7 +53,7 @@ export default function ProductList({ initialProducts }: ProductsListProps) {
     setProducts(initialProducts);
   }, [initialProducts]);
 
-  const { ref } = useInView({
+  const [skeletonRef] = useInView({
     threshold: 0,
     onChange(inView) {
       if (inView && products.next_paging) {
@@ -98,12 +99,7 @@ export default function ProductList({ initialProducts }: ProductsListProps) {
               </div>
             </React.Fragment>
           ))}
-          {products.next_paging && (
-            <div
-              ref={ref}
-              className="fake-loading h-[500px] w-full bg-gray-200"
-            />
-          )}
+          {products.next_paging && <ProductsSkeleton ref={skeletonRef} />}
         </div>
       )}
     </section>
